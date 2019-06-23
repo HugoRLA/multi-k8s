@@ -12,9 +12,9 @@ after_success:
   - docker build -t hugorla/multi-client ./client
   - docker build -t hugorla/multi-nginx ./nginx
   - docker build -t hugorla/multi-server ./server
-  - docker build -t hugorla/multi-client ./worker
+  - docker build -t hugorla/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push hugorla/multi-client
   - docker push hugorla/multi-nginx 
   - docker push hugorla/multi-server
-  - docker push hugorla/multi-client
+  - docker push hugorla/multi-worker
