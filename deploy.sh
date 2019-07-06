@@ -10,7 +10,7 @@ docker push hugorla/multi-client:$SHA
 docker push hugorla/multi-server:$SHA
 docker push hugorla/multi-worker:$SHA
 
-
+kubectl apply -f k8s
 kubectl set image deployments/client-deployment client=hugorla/multi-client:$SHA
 kubectl set image deployments/server-deployment server=hugorla/multi-server:$SHA
 kubectl set image deployments/worker-deployment worker=hugorla/multi-worker:$SHA
